@@ -25,12 +25,13 @@ function ConvertFrom-Base64
     (
         # Param1 help description
         [Parameter(Mandatory=$true,
-                   ValueFromPipelineByPropertyName=$true,
-                   Position=0)]
+                    ValueFromPipeline=$true,
+                    ValueFromPipelineByPropertyName=$true,
+                    Position=0)]
         $Code,
         [Parameter(Mandatory=$false,
-                   ValueFromPipelineByPropertyName=$false,
-                   Position=1)]
+                    ValueFromPipelineByPropertyName=$false,
+                    Position=1)]
                    
         [switch]$OutFile,
 
@@ -66,6 +67,7 @@ function ConvertFrom-Base64
                 catch
                 {
                     Write-Error "Please make sure the path parameter is a valid file path."
+                    break
                 }
             }
             else
